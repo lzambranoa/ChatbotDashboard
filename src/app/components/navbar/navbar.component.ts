@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   standalone: true,
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
   imports: []
 })
 export class NavbarComponent {
- 
+  private authService = inject(AuthService);
+
+  logout() {
+    this.authService.logout();
+  }
 }

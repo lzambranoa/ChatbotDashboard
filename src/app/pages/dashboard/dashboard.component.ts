@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,4 +9,17 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  botsActivos = 8;  // Valores de prueba
+  botsInactivos = 3;
+  totalBots = this.botsActivos + this.botsInactivos;
+
+  constructor(private router: Router) {}
+
+  irABots() {
+    this.router.navigate(['/bots']);
+  }
+
+  irAConfig() {
+    this.router.navigate(['/config']);
+  }
 }
