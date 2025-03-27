@@ -1,10 +1,27 @@
-<aside class="h-full w-64 bg-gray-900 text-white flex flex-col p-4">
+<aside class="h-full bg-gray-900 text-white flex flex-col p-4 transition-all duration-300"
+  [class.w-16]="collapsed"
+  [class.w-64]="!collapsed">
 
-    <h2 class="text-xl font-bold mb-6">Menú</h2>
+    <button (click)="toggleSidebar()" class="mb-4 text-white">
+        <lucide-angular [img]="MenuIcon" class="w-6 h-6"></lucide-angular>
+    </button>
+
+    <h2 *ngIf="!collapsed" class="text-xl font-bold mb-6">Menú</h2>
 
     <ul>
-        <li class="mb-2"><a class="hover:bg-gray-700 p-2 block rounded" routerLink="/">Inicio</a></li>
-    <li class="mb-2"><a class="hover:bg-gray-700 p-2 block rounded" routerLink="/bots">Mis Bots</a></li>
-    <li class="mb-2"><a class="hover:bg-gray-700 p-2 block rounded" routerLink="/config">Configuración</a></li>
+        <li class="mb-2 flex items-center">
+            <lucide-angular [img]="HomeIcon" class="w-6 h-6"></lucide-angular>
+            <a *ngIf="!collapsed" class="hover:bg-gray-700 p-2 block rounded ml-2" routerLink="/">Inicio</a>
+        </li>
+
+        <li class="mb-2 flex items-center">
+            <lucide-angular [img]="MessageCircleIcon" class="w-6 h-6"></lucide-angular>
+            <a *ngIf="!collapsed" class="hover:bg-gray-700 p-2 block rounded" routerLink="/bots">Mis Bots</a>
+        </li>
+
+        <li class="mb-2 flex items-center">
+            <lucide-angular [img]="SettingsIcon" class="w-6 h-6"></lucide-angular>
+            <a *ngIf="!collapsed" class="hover:bg-gray-700 p-2 block rounded ml-2" routerLink="/config">Configuración</a>
+        </li>
     </ul>
 </aside>
