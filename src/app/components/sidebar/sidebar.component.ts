@@ -21,6 +21,7 @@ collapsed = false;
 toggleSidebar() {
   this.collapsed = !this.collapsed;
   document.body.classList.toggle('sidebar-collapsed', this.collapsed);
+  console.log('Sidebar collapsed:', this.collapsed);
 }
   
 }
