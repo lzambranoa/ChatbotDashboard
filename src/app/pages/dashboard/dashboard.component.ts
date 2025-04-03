@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import Chart from 'chart.js/auto';
+import { ChatComponent } from '../../components/chat/chat.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [ChatComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -16,11 +18,17 @@ export class DashboardComponent implements AfterViewInit {
   botsActivos = 10;  // Datos de prueba
   botsInactivos = 5;
   totalBots = this.botsActivos + this.botsInactivos;
+  mostrarChat = false;
 
   botChart: any;
   growthChart: any;
 
   constructor(private router: Router) {}
+
+  toggleChat() {
+    console.log("Mostrar Chat")
+    this.mostrarChat = !this.mostrarChat;
+  }
 
   ngAfterViewInit() {
     this.initBotChart();

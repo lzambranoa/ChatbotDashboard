@@ -1,0 +1,24 @@
+<div class="fixed bottom-4 right-4 w-80 bg-white shadow-xl rounded-lg">
+    <div class="p-4 bg-blue-500 text-white font-bold flex justify-between">
+        <span>Chatbot</span>
+        <button (click)="cerrarChat()" class="text-white">X</button>
+    </div>
+
+    <div class="h-64 overflow-auto p-4 space-y-2">
+        @for (msg of mensajes; track $index) {
+            
+            <div [ngClass]="msg.tipo === 'usuario' ? 'text-right' : 'text-left'">
+                <div class="inline-block p-2 rounded-lg" 
+                [ngClass]="msg.tipo === 'usuario' ? 'bg-blue-500 text-white' : 'bg-gray-200'">
+                {{ msg.texto }}
+                </div>
+            </div>
+        }
+
+        <div class="p-2 border-t flex">
+            <input [(ngModel)]="mensaje" type="text" placeholder="Escribe un mensaje..." class="flex-1 p-2 border rounded-lg">
+            <button (click)="enviarMensaje()" class="ml-2 bg-blue-500 text-white p-2 rounded-lg">➤</button>
+        </div>
+
+    </div>
+</div>

@@ -53,5 +53,13 @@
         Configuración
       </button>
     </div>
+
+    <div class="fixed bottom-4 right-4">
+      <button (click)="toggleChat()" class="bg-blue-500 text-white p-4 rounded-full shadow-lg">💬</button>
+    </div>
+    
+    <div *ngIf="mostrarChat" class="fixed bottom-16 right-4">
+      <app-chat></app-chat>
+    </div>
   </div>
   
