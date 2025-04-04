@@ -34,8 +34,8 @@
       <h2 class="text-lg font-semibold text-gray-700">{{ editando ? 'Editar' : 'Agregar' }} Pregunta</h2>
   
       <form (submit)="guardarPregunta($event)">
-        <input type="text" [(ngModel)]="pregunta.pregunta" placeholder="Escribe la pregunta" class="w-full border p-2 my-2 rounded">
-        <input type="text" [(ngModel)]="respuesta" placeholder="Escribe la respuesta" class="w-full border p-2 my-2 rounded">
+        <input type="text" [(ngModel)]="pregunta.pregunta"  name="pregunta" placeholder="Escribe la pregunta" class="w-full border p-2 my-2 rounded">
+        <input type="text" [(ngModel)]="respuesta" name="respuesta" placeholder="Escribe la respuesta" class="w-full border p-2 my-2 rounded">
         
         <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
           {{ editando ? 'Actualizar' : 'Agregar' }}

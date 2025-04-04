@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, AfterViewInit, Component, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import Chart from 'chart.js/auto';
 import { ChatComponent } from '../../components/chat/chat.component';
 import { CommonModule } from '@angular/common';
+import { LucideAngularModule, SlidersIcon } from 'lucide-angular';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ChatComponent, CommonModule],
+  imports: [ChatComponent, CommonModule, LucideAngularModule, RouterModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,6 +15,9 @@ import { CommonModule } from '@angular/common';
 export class DashboardComponent implements AfterViewInit {
   @ViewChild('botChart', { static: false }) botChartCanvas!: ElementRef;
   @ViewChild('growthChart', { static: false }) growthChartCanvas!: ElementRef;
+
+
+  readonly SliderIcon = SlidersIcon;
 
   botsActivos = 10;  // Datos de prueba
   botsInactivos = 5;

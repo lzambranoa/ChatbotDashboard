@@ -15,6 +15,11 @@
         </li>
 
         <li class="mb-2 flex items-center">
+            <lucide-angular [img]="LayoutDashboardIcon" class="w-6 h-6"></lucide-angular>
+            <a *ngIf="!collapsed" class="hover:bg-gray-700 p-2 block rounded" routerLink="/dashboard">Dashboard</a>
+        </li>
+        
+        <li class="mb-2 flex items-center">
             <lucide-angular [img]="MessageCircleIcon" class="w-6 h-6"></lucide-angular>
             <a *ngIf="!collapsed" class="hover:bg-gray-700 p-2 block rounded" routerLink="/bots">Mis Bots</a>
         </li>

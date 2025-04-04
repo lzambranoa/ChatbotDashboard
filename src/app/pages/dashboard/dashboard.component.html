@@ -3,7 +3,7 @@
 
   <!-- Sección de Tarjetas -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fadeIn">
-    
+
     <div class="bg-white p-6 rounded-lg shadow-md">
       <h2 class="text-lg font-semibold text-gray-700">Bots Activos</h2>
       <p class="text-3xl font-bold text-blue-500">{{ botsActivos }}</p>
@@ -19,6 +19,19 @@
       <p class="text-3xl font-bold text-gray-800">{{ totalBots }}</p>
     </div>
 
+    <!-- Configurar Chat -->
+    <div class="bg-white p-6 rounded-xl shadow-lg my-3 animate-fadeIn flex items-center justify-between">
+      <div>
+        <h3 class="text-lg font-semibold text-gray-700">Configurar Chat</h3>
+        <p class="text-gray-600">Personaliza las respuestas y funciones de tu chatbot.</p>
+      </div>
+      <button routerLink="/config-chat"
+        class="bg-blue-500 text-white py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-600 transition">
+        <lucide-angular [img]="SliderIcon" class="w-6 h-6"></lucide-angular>
+        Configurar
+      </button>
+    </div>
+
   </div>
 
   <!-- Gráfico de Bots Activos/Inactivos -->
@@ -27,8 +40,8 @@
     <canvas #botChart class="mx-auto"></canvas>
   </div>
 
-   <!-- Nuevo Gráfico de Crecimiento Mensual -->
-   <div class="bg-white p-6 rounded-xl shadow-lg col-span-2 my-3 animate-fadeIn">
+  <!-- Nuevo Gráfico de Crecimiento Mensual -->
+  <div class="bg-white p-6 rounded-xl shadow-lg col-span-2 my-3 animate-fadeIn">
     <h3 class="text-lg font-semibold text-gray-700">Crecimiento de Bots</h3>
     <canvas #growthChart></canvas>
   </div>
@@ -40,26 +53,25 @@
       Ver Reportes
     </button>
   </div>
-  
-    <!-- Accesos Rápidos -->
-    <div class="mt-8 flex gap-4">
-      <button (click)="irABots()"
-        class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
-        Administrar Bots
-      </button>
-  
-      <button (click)="irAConfig()"
-        class="bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition duration-300">
-        Configuración
-      </button>
-    </div>
 
-    <div class="fixed bottom-4 right-4">
-      <button (click)="toggleChat()" class="bg-blue-500 text-white p-4 rounded-full shadow-lg">💬</button>
-    </div>
-    
-    <div *ngIf="mostrarChat" class="fixed bottom-16 right-4">
-      <app-chat></app-chat>
-    </div>
+  <!-- Accesos Rápidos -->
+  <div class="mt-8 flex gap-4">
+    <button (click)="irABots()"
+      class="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition duration-300">
+      Administrar Bots
+    </button>
+
+    <button (click)="irAConfig()"
+      class="bg-gray-600 text-white px-6 py-3 rounded-md hover:bg-gray-700 transition duration-300">
+      Configuración
+    </button>
   </div>
-  
+
+  <div class="fixed bottom-4 right-4">
+    <button (click)="toggleChat()" class="bg-blue-500 text-white p-4 rounded-full shadow-lg">💬</button>
+  </div>
+
+  <div *ngIf="mostrarChat" class="fixed bottom-16 right-4">
+    <app-chat></app-chat>
+  </div>
+</div>

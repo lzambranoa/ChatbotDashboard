@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LucideAngularModule, HomeIcon, SettingsIcon, MenuIcon, MessageCircleIcon } from 'lucide-angular';
+import { LucideAngularModule, HomeIcon, SettingsIcon, MenuIcon, MessageCircleIcon, LayoutDashboardIcon } from 'lucide-angular';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,6 +15,7 @@ export class SidebarComponent {
   readonly MenuIcon = MenuIcon;
   readonly HomeIcon = HomeIcon;
   readonly SettingsIcon = SettingsIcon;
+  readonly LayoutDashboardIcon = LayoutDashboardIcon;
 
 collapsed = false;
 
